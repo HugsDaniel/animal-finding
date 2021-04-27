@@ -1,0 +1,14 @@
+<h1><%= @pet.name %></h1>
+
+<p>
+  <strong>Species :</strong> <%= @pet.species %>
+</p>
+
+<p>
+  Found <%= (Time.now.day - @pet.date.day).to_i %> days ago in <%= @pet.address %>
+</p>
+
+<%= link_to "Modifier", edit_pet_path(@pet), class: "btn btn-warning" %>
+<%= link_to "Supprimer", pet_path(@pet), method: :delete, class: "btn btn-danger", data: { confirm: "T'es-tu sûr ?" } %>
+
+<%= link_to "Back to list", pets_path %>

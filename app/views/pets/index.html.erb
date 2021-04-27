@@ -3,7 +3,9 @@
 <ul>
   <% @pets.each do |pet| %>
     <li>
-      <%= pet.name %> - <%= pet.species %>
+      <%= link_to pet.name, pet_path(pet) %> - <%= pet.species %>
     </li>
   <% end %>
 </ul>
+
+<%= link_to "Ajouter un animal", new_pet_path, class: "btn btn-primary" %>

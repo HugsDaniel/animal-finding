@@ -19,7 +19,7 @@ puts "Creating pets"
     name: Faker::Creature::Dog.name,
     species: species.sample,
     address: Faker::Address.city,
-    date: Time.now
+    date: Time.now - 3.days
   )
 end
 puts "Done"

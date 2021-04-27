@@ -1,0 +1,9 @@
+<%= simple_form_for pet do |f| %>
+  <%= f.input :name %>
+  <%= f.input :species, collection: %w(dog cat snake bird goat piglet fish) %>
+  <%= f.input :address %>
+  <%= f.input :date %>
+
+  <%= link_to "Annuler", pets_path, class: "btn btn-warning" %>
+  <%= f.submit "Signaler l'animal", class: "btn btn-success" %>
+<% end %>
