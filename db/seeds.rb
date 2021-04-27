@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+species = %w(dog cat snake bird goat piglet fish)
+
+if Rails.env.development?
+  Pet.destroy_all
+end
+
+puts "Creating pets"
+10.times do
+  print "."
+  Pet.create!(
+    name: Faker::Creature::Dog.name,
+    species: species.sample,
+    address: Faker::Address.city,
+    date: Time.now
+  )
+end
+puts "Done"
